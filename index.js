@@ -48,7 +48,7 @@ const getTimeRemaining = (ip) => {
 
 // Check status endpoint
 app.get('/check-status', (req, res) => {
-  const ip = req.ip || req.connection.remoteAddress;
+  const ip = req.ip || req.socket.remoteAddress;
   const cookieData = req.cookies[COOKIE_NAME];
   
   // Check cookie first
@@ -87,7 +87,7 @@ app.get('/check-status', (req, res) => {
 
 // Claim coupon endpoint
 app.post('/claim-coupon', (req, res) => {
-  const ip = req.ip || req.connection.remoteAddress;
+  const ip = req.ip || req.socket.remoteAddress;
   const cookieData = req.cookies[COOKIE_NAME];
   
   // Check cookie first
