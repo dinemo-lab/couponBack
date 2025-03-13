@@ -86,7 +86,7 @@ app.get('/check-status', (req, res) => {
 });
 
 // Claim coupon endpoint
-app.post('/claim', (req, res) => {
+app.post('/claim-coupon', (req, res) => {
   const ip = req.ip || req.connection.remoteAddress;
   const cookieData = req.cookies[COOKIE_NAME];
   
