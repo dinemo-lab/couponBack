@@ -48,6 +48,7 @@ const getTimeRemaining = (ip) => {
 
 // Check status endpoint
 app.get('/check-status', (req, res) => {
+console.log('hiiiiiiiiiiiiiiiiiiii');
   const ip = req.ip || req.socket.remoteAddress;
   const cookieData = req.cookies[COOKIE_NAME];
   
@@ -86,7 +87,9 @@ app.get('/check-status', (req, res) => {
 });
 
 // Claim coupon endpoint
-app.post('/claim-coupon', (req, res) => {
+app.post('/claim', (req, res) => {
+    console.log('Request received from IP:', req.ip);
+    console.log('hiiiiiiiiiiiiiiiiiiii')
   const ip = req.ip || req.socket.remoteAddress;
   const cookieData = req.cookies[COOKIE_NAME];
   
